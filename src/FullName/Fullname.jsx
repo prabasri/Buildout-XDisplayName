@@ -15,7 +15,8 @@ function Fullname() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
+      <form onSubmit={handleSubmit}>
       <h1>Full Name Display</h1>
       <label htmlFor="firstName">First Name:</label>  {/* To display 'First Name:' near input box and don't use <p> tag for this */}
       <input type="text" id="firstName" value={firstName} onChange={(e) => {setFirstName(e.target.value)}} required/> {/* */}
@@ -25,8 +26,10 @@ function Fullname() {
       <br/>
       <button type="submit">Submit</button> {/* The <input type="submit"> defines a submit button which submits all form values to a form-handler. The form-handler is typically a server page with a script for processing the input data. The form-handler is specified in the form's action attribute */}
       {/* <p>{isSubmitted && {fullName}}</p> */}
-      {isSubmitted && <p>Full Name: {fullName}</p>}
     </form>
+      {isSubmitted && <p>Full Name: {fullName}</p>}
+    </div>
+    
   )
 }
 
