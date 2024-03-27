@@ -10,6 +10,7 @@ function Fullname() {
 
   const handleSubmit = (event) => {
     event.preventDefault();  // to prevent the default behaviour of any element like button, form, anchor tag, etc
+    // console.log(fullName);
     setIsSubmitted(true);
   }
 
@@ -23,7 +24,8 @@ function Fullname() {
       <input type="text" id="lastName" value={lastName} onChange={(e) => {setLastName(e.target.value)}} required/>
       <br/>
       <button type="submit">Submit</button> {/* The <input type="submit"> defines a submit button which submits all form values to a form-handler. The form-handler is typically a server page with a script for processing the input data. The form-handler is specified in the form's action attribute */}
-      <p>{isSubmitted ? `Full Name: ${fullName}` : ""}</p>
+      {/* <p>{isSubmitted && {fullName}}</p> */}
+      {isSubmitted && <p>Full Name: {fullName}</p>}
     </form>
   )
 }
